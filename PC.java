@@ -1,20 +1,20 @@
+import java.util.Random;
+
 public class PC {
 
-    String motherboard;
-    String CPU;
-    String RAM;
-    String GPU;
-    String PSU;
-    String storage;
-    int price;
+    private String motherboard;
+    private String CPU;
+    private String RAM;
+    private String GPU;
+    private String PSU;
+    private String storage;
+    private int price;
+    private static int staticFrameNumber;
+    private int frameNumber;
     
-    public PC(String newMobo, String newCPU, String newRAM, String newGPU, String newPSU, String newStorage){
-        motherboard = newMobo;
-        CPU = newCPU;
-        RAM = newRAM;
-        GPU = newGPU;
-        PSU = newPSU;
-        storage = newStorage;
+    public PC(){
+        randomizeComponents();
+        frameNumber = staticFrameNumber++;
     }
 
     public String getMotherboard(){
@@ -41,6 +41,10 @@ public class PC {
         return storage;
     }
 
+    public int getFrameNumber(){
+        return frameNumber;
+    }
+
     @Override
     public String toString(){
         return "Motherboard: " + motherboard + "\n" +
@@ -51,5 +55,16 @@ public class PC {
                 "Storage: " + storage + "\n" +
                 "Price: " + price;
 
+    }
+
+    public void randomizeComponents(){
+        Random number = new Random();
+        int brandSelect = number.nextInt(2);
+        motherboard = ComponentsList.moboList[brandSelect][number.nextInt(4)];
+        CPU = ComponentsList.cpuList[brandSelect][number.nextInt(7)];
+        GPU = ComponentsList.gpuList[brandSelect][number.nextInt(7)];
+        RAM = ComponentsList.ramList[number.nextInt(4)];
+        PSU = ComponentsList.psuList[number.nextInt(7)];
+        storage = ComponentsList.storageList[number.nextInt(4)];
     }
 }
