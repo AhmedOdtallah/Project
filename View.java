@@ -5,7 +5,7 @@ import java.awt.event.*;
 
 class View{
     public View(){
-        
+
         JFrame frame = new JFrame("The CFG Shop");
         frame.setIconImage(new ImageIcon("PCIcons\\icon1.jpg").getImage());
         JPanel computersContainer = new JPanel(new GridLayout(2,4,15,15));
@@ -38,6 +38,7 @@ class View{
             computerButtons[index] = new JButton("PC " + (index+1));
             computersContainer.add(computerButtons[index]);
             computerButtons[index].addActionListener(new ComputerButtonListener(catalog.getPC(index)));
+            computerButtons[index].setIcon(new ImageIcon("PCIcons\\icon" + index + ".jpg"));
         }
 
         northPanel.add(catalogButton);
