@@ -1,10 +1,11 @@
 import java.io.*;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 class View{
     public View(){
-
+        
         JFrame frame = new JFrame("The CFG Shop");
         frame.setIconImage(new ImageIcon("PCIcons\\icon1.jpg").getImage());
         JPanel computersContainer = new JPanel(new GridLayout(2,4,15,15));
@@ -14,10 +15,16 @@ class View{
         JButton[] computerButtons = new JButton[8];
         JButton catalogButton = new JButton("PC Catalog");
         JButton configurator = new JButton("Configurator");
-        JButton BUY = new JButton("BUY");
+        JButton CLOSE = new JButton("CLOSE");
+        
+        CLOSE.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                frame.dispose();
+            }
+        });
         
         ComputerShop catalog = new ComputerShop();
-
+        
         final int width = 800;
         final int height = 600;
         frame.setVisible(true);
@@ -41,12 +48,11 @@ class View{
         computersContainer.setSize(width, height);
         frame.add(computersContainer, BorderLayout.CENTER);
         
-        bottomPanel.add(BUY, BorderLayout.EAST);
+        bottomPanel.add(CLOSE, BorderLayout.EAST);
         frame.add(bottomPanel, BorderLayout.SOUTH);
     }
 
     public static void main(String[] args){
         View view = new View();
-        Model model = new Model();
     }
 }
