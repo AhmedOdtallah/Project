@@ -1,7 +1,7 @@
 import java.io.*;
 import javax.swing.*;
 import java.awt.*;
-// import PCIcons.IconList;
+
 class View{
     public View(){
 
