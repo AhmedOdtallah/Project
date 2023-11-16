@@ -13,7 +13,9 @@ public class ComputerButtonListener implements ActionListener{
 
     public void actionPerformed(ActionEvent e) {
         if(pc instanceof Desktop){
-            JOptionPane.showOptionDialog(null, ((Desktop)pc).toString(), "Would you like to buy this PC?", 0, 0, (new ImageIcon("PCIcons\\icon" + ((Desktop)pc).getFrameNumber() + ".jpg")), null, e);
+            JOptionPane.showOptionDialog(null, ((Desktop)pc).toString(), "Would you like to buy this PC?", 0, 0, (new ImageIcon("PCIcons\\icon" + ((PC)pc).getFrameNumber() + ".jpg")), null, e);
+        }else if(pc instanceof Laptop){
+            JOptionPane.showOptionDialog(null, ((Laptop)pc).toString(), "Would you like to buy this PC?", 0, 0, (new ImageIcon("PCIcons\\icon" + ((PC)pc).getFrameNumber() + ".jpg")), null, e);
         }
     }
 }

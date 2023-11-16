@@ -1,34 +1,23 @@
 public class Laptop extends PC {
     
-    Component screenType = new Component("OLED", 200);
-    private int batteryLife;
-    
+    private static Component screenType = new Component("IPS", 150);
+    private int batteryLife = 2;
+
     public Laptop(){
         super();
     }
 
-    public String getScreenType(){
-        return screenType.getName();
-    }
-
-    public int getBatteryLife(){
-        return batteryLife;
-    }
-
-    // public void selectScreenType(){
-    //     screenType = new Component("OLED", 200);
-    // }
-
     @Override
     public String toString(){
-        return "Screen type: " + screenType + "\n" + 
-               "Battery life: " + batteryLife + "\n" +
+        return "Screen type: " + screenType.getName() + "\n" +
+               "Battery Life: " + batteryLife + " hours\n" +
                super.toString();
     }
 
     @Override
     public int priceAccordingly(){
-        setPrice((super.getPrice()+screenType.getPrice()));
+        super.priceAccordingly();
+        setPrice(getPrice() + screenType.getPrice());
         return getPrice();
     }
 }
