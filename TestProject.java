@@ -7,13 +7,8 @@ public class TestProject extends Thread{
     }
 
     public void run(){
-        do{
-            try{
-                view.addToJTextField("deez\n");
-                Thread.sleep(1000);
-            }catch(InterruptedException e){
-    
-            }
-        }while(1==1);
+        for(int i = 0; i < 10; i++){
+            view.addToJTextField("\n");
+        }
     }
 }

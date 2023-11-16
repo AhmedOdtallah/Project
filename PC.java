@@ -2,24 +2,19 @@ import java.util.Random;
 
 public class PC {
 
-    private Component motherboard;
     private Component CPU;
     private Component RAM;
     private Component GPU;
-    private Component PSU;
     private Component storage;
     private int price;
     private static int staticFrameNumber;
     private int frameNumber;
-    
+    private int brandSelect;
+
     public PC(){
         randomizeComponents();
         priceAccordingly();
         frameNumber = staticFrameNumber++;
-    }
-
-    public String getMotherboard(){
-        return motherboard.getName();
     }
 
     public String getCPU(){
@@ -34,10 +29,6 @@ public class PC {
         return GPU.getName();
     }
 
-    public String getPSU(){
-        return PSU.getName();
-    }
-
     public String getStorage(){
         return storage.getName();
     }
@@ -46,31 +37,39 @@ public class PC {
         return frameNumber;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int newPrice){
+        price = newPrice;
+    }
+
+    public int getBrandSelection(){
+        return brandSelect;
+    }
+
     @Override
     public String toString(){
-        return "Motherboard: " + motherboard.getName() + "\n" +
-                "CPU: " + CPU.getName() + "\n" +
+        return  "CPU: " + CPU.getName() + "\n" +
                 "RAM: " + RAM.getName() + "\n" +
                 "GPU: " + GPU.getName() + "\n" + 
-                "PSU: " + PSU.getName() + "\n" +
                 "Storage: " + storage.getName() + "\n" +
                 "Price: " + price;
-
     }
 
     public void randomizeComponents(){
         Random number = new Random();
-        int brandSelect = number.nextInt(2);
-        motherboard = ComponentsList.moboList[brandSelect][number.nextInt(4)];
+        brandSelect = number.nextInt(2);
         CPU = ComponentsList.cpuList[brandSelect][number.nextInt(7)];
         GPU = ComponentsList.gpuList[brandSelect][number.nextInt(8)];
         RAM = ComponentsList.ramList[number.nextInt(4)];
-        PSU = ComponentsList.psuList[number.nextInt(8)];
         storage = ComponentsList.storageList[number.nextInt(4)];
     }
 
-    public void priceAccordingly(){
-        price += motherboard.getPrice() + CPU.getPrice() + GPU.getPrice() +
-        RAM.getPrice() + PSU.getPrice() + storage.getPrice(); 
+    public int priceAccordingly(){
+        price += CPU.getPrice() + GPU.getPrice() +
+        RAM.getPrice() + storage.getPrice(); 
+        return price;
     }
 }

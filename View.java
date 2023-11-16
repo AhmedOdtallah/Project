@@ -4,27 +4,28 @@ import java.awt.*;
 import java.awt.event.*;
 
 class View{
-    JFrame frame = new JFrame("The CFG Shop");
+    private JFrame frame = new JFrame("The CFG Shop");
     
-    JPanel computersContainer = new JPanel(new GridLayout(2,4,15,15));
-    JPanel northPanel = new JPanel();
-    JPanel bottomPanel = new JPanel();
-    JPanel simulatePanel = new JPanel();
+    private JPanel computersContainer = new JPanel(new GridLayout(2,4,15,15));
+    private JPanel northPanel = new JPanel();
+    private JPanel bottomPanel = new JPanel();
+    private JPanel simulatePanel = new JPanel();
     
-    JButton[] computerButtons = new JButton[8];
-    JButton catalogButton = new JButton("PC CATALOG");
-    JButton simulateButton = new JButton("SIMULATE");
-    JButton CLOSE = new JButton("CLOSE");
+    private JButton[] computerButtons = new JButton[8];
+    private JButton catalogButton = new JButton("PC CATALOG");
+    private JButton simulateButton = new JButton("SIMULATE");
+    private JButton CLOSE = new JButton("CLOSE");
     
-    JTextArea simulationField = new JTextArea("Simulation field...");
+    private JTextArea simulationField = new JTextArea("Simulation field...");
 
-    ComputerShop catalog = new ComputerShop();
+    private ComputerShop catalog = new ComputerShop();
 
-    static String text;
+    private static String text;
 
     public View(){
         
         frame.setIconImage(new ImageIcon("PCIcons\\icon1.jpg").getImage());
+        
         simulateButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
                 computersContainer.setVisible(false);
@@ -45,8 +46,8 @@ class View{
             }
         });
         
-        final int width = 1250;
-        final int height = 800;
+        final int width = 1050;
+        final int height = 700;
         frame.setVisible(true);
         frame.pack();
         frame.setSize(width, height);
