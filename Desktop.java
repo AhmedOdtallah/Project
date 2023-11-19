@@ -27,7 +27,7 @@ public class Desktop extends PC {
     public void randomizeComponents() {
         Random number = new Random();
         super.randomizeComponents();
-        PSU = ComponentsList.psuList[number.nextInt(8)];
+        PSU = ComponentsList.psu.get(number);
         motherboard = ComponentsList.moboList[getBrandSelection()][number.nextInt(4)];
     }
 
