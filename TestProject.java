@@ -1,5 +1,5 @@
 public class TestProject extends Thread{
-    static View view;
+    private static View view;
     public static void main(String[] args){
         view = new View();
         TestProject project = new TestProject();

@@ -1,42 +1,49 @@
 import java.util.Random;
 
-public class Desktop extends PC {
+public class Desktop extends PC{
     
     private Component PSU;
     private Component motherboard;
-    
+
     public Desktop(){
         super();
+        PSU = new Component("", 0);
+        motherboard = new Component("", 0);
+        randomizeComponents();
+        priceAccordingly();
     }
 
-    public String getMotherboard(){
-        return motherboard.getName();
+    public void setPSU(Component pSU) {
+        PSU = pSU;
     }
 
-    public String getPSU(){
-        return PSU.getName();
+    public void setMotherboard(Component motherboard) {
+        this.motherboard = motherboard;
     }
 
-    public String toString(){
-        return "Motherboard: " + motherboard.getName() + "\n" + 
-               "Power supply: " + PSU.getName() + "\n" + 
-               super.toString();
+    public Component getPSU(){
+        return PSU;
+    }
+
+    public Component getMotherboard(){
+        return motherboard;
     }
 
     @Override
-    public void randomizeComponents() {
-        Random number = new Random();
-        super.randomizeComponents();
-        PSU = ComponentsList.psu.get(number);
-        motherboard = ComponentsList.moboList[getBrandSelection()][number.nextInt(4)];
+    public void randomizeComponents(){
+        Random randomNumber = new Random();
+        int number = randomNumber.nextInt(6);
+        String component = ComponentsList.psuKeys.get(number);
+        PSU.Copy(ComponentsList.psu.get(component));
+        number = randomNumber.nextInt(5);
+        component = ComponentsList.motherboardKeys.get(number);
+        motherboard.Copy(ComponentsList.motherboards.get(component));
     }
 
-    @Override
-    public int priceAccordingly(){
-        setPrice(super.priceAccordingly() + motherboard.getPrice() + PSU.getPrice());
-        return getPrice();
+    public static void main(String[] args){
+        Component PSU = new Component("Not fuckin null", 100000);
+        System.out.println(PSU.getName());
+        Desktop desktop = new Desktop();
+        System.out.println(desktop.toString());
     }
-
-
-
 }

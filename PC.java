@@ -2,14 +2,13 @@ import java.util.Random;
 
 public class PC {
 
-    private Component CPU;
-    private Component RAM;
-    private Component GPU;
-    private Component storage;
-    private int price;
+    private Component CPU = new Component();
+    private Component RAM = new Component();
+    private Component GPU = new Component();
+    private Component storage = new Component();
+    private int totalPrice;
     private static int staticFrameNumber;
     private int frameNumber;
-    private int brandSelect;
 
     public PC(){
         randomizeComponents();
@@ -38,15 +37,11 @@ public class PC {
     }
 
     public int getPrice() {
-        return price;
+        return totalPrice;
     }
 
     public void setPrice(int newPrice){
-        price = newPrice;
-    }
-
-    public int getBrandSelection(){
-        return brandSelect;
+        totalPrice = newPrice;
     }
 
     @Override
@@ -55,21 +50,28 @@ public class PC {
                 "RAM: " + RAM.getName() + "\n" +
                 "GPU: " + GPU.getName() + "\n" + 
                 "Storage: " + storage.getName() + "\n" +
-                "Price: " + price;
+                "Price: " + totalPrice;
     }
 
     public void randomizeComponents(){
-        Random number = new Random();
-        brandSelect = number.nextInt(2);
-        CPU = ComponentsList.cpuList[brandSelect][number.nextInt(7)];
-        GPU = ComponentsList.gpuList[brandSelect][number.nextInt(8)];
-        RAM = ComponentsList.ramList[number.nextInt(4)];
-        storage = ComponentsList.storageList[number.nextInt(4)];
+        Random randomNumber = new Random();
+        int number = randomNumber.nextInt(8);
+        String component = ComponentsList.cpuKeys.get(number);
+        CPU.Copy(ComponentsList.cpus.get(component));
+        number = randomNumber.nextInt(4);
+        component = ComponentsList.ramKeys.get(number);
+        RAM.Copy(ComponentsList.ram.get(component));
+        number = randomNumber.nextInt(4);
+        component = ComponentsList.gpuKeys.get(number);
+        GPU.Copy(ComponentsList.gpus.get(component));
+        number = randomNumber.nextInt(4);
+        component = ComponentsList.storageKeys.get(number);
+        storage.Copy(ComponentsList.storage.get(component));
     }
 
     public int priceAccordingly(){
-        price += CPU.getPrice() + GPU.getPrice() +
+        totalPrice += CPU.getPrice() + GPU.getPrice() +
         RAM.getPrice() + storage.getPrice(); 
-        return price;
+        return totalPrice;
     }
 }
