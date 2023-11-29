@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class PC {
+public abstract class PC {
 
     private Component CPU = new Component();
     private Component RAM = new Component();
@@ -74,4 +74,6 @@ public class PC {
         RAM.getPrice() + storage.getPrice(); 
         return totalPrice;
     }
+
+    public abstract String pcType();
 }

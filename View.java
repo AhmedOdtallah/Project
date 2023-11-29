@@ -1,4 +1,3 @@
-import java.io.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -16,11 +15,9 @@ class View{
     private JButton simulateButton = new JButton("SIMULATE");
     private JButton CLOSE = new JButton("CLOSE");
     
-    private JTextArea simulationField = new JTextArea("Simulation field...");
+    private JTextArea simulationField = new JTextArea("Sim start...\n");
 
     private ComputerShop catalog = new ComputerShop();
-
-    private static String text;
 
     public View(){
         
@@ -79,8 +76,11 @@ class View{
 
     }
 
+    public PC getComputer(int number){
+        return catalog.getPC(number);
+    }
+
     public void addToJTextField(String message){
-        text += message + "\n";
-        simulationField.append(message);
+        simulationField.append(message + "\n");
     }
 }

@@ -42,6 +42,11 @@ public class ComponentsList {
         put("4 TB", new Component("4 TB",240)); 
     }};
 
+    //There are 3 screen options
+    protected static HashMap<String, Component> panels = new HashMap<>(){{
+        put("OLED", new Component("OLED", 500)); put("IPS", new Component("IPS", 250)); put("TS", new Component("TS", 50));
+    }};
+
     protected static ArrayList<String> motherboardKeys = new ArrayList<>(motherboards.keySet());
 
     protected static ArrayList<String> cpuKeys = new ArrayList<>(cpus.keySet());
@@ -54,4 +59,5 @@ public class ComponentsList {
 
     protected static ArrayList<String> storageKeys = new ArrayList<>(storage.keySet());
 
+    protected static ArrayList<String> panelKeys = new ArrayList<>(panels.keySet());
 }

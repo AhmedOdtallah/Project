@@ -2,19 +2,17 @@ import java.util.Random;
 
 public class Desktop extends PC{
     
-    private Component PSU;
-    private Component motherboard;
+    private Component PSU = new Component();
+    private Component motherboard = new Component();
 
     public Desktop(){
         super();
-        PSU = new Component("", 0);
-        motherboard = new Component("", 0);
         randomizeComponents();
         priceAccordingly();
     }
 
-    public void setPSU(Component pSU) {
-        PSU = pSU;
+    public void setPSU(Component psu) {
+        PSU = psu;
     }
 
     public void setMotherboard(Component motherboard) {
@@ -31,19 +29,27 @@ public class Desktop extends PC{
 
     @Override
     public void randomizeComponents(){
+        super.randomizeComponents();
         Random randomNumber = new Random();
+        //Get Random PSU
         int number = randomNumber.nextInt(6);
         String component = ComponentsList.psuKeys.get(number);
-        PSU.Copy(ComponentsList.psu.get(component));
+        PSU = ComponentsList.psu.get(component);
+        //Get Random Mobo
         number = randomNumber.nextInt(5);
         component = ComponentsList.motherboardKeys.get(number);
-        motherboard.Copy(ComponentsList.motherboards.get(component));
+        motherboard = ComponentsList.motherboards.get(component);
     }
 
-    public static void main(String[] args){
-        Component PSU = new Component("Not fuckin null", 100000);
-        System.out.println(PSU.getName());
-        Desktop desktop = new Desktop();
-        System.out.println(desktop.toString());
+    @Override
+    public String toString(){
+        return "PSU: " + PSU.getName() + "\n" +
+               "Motherboard: " + motherboard.getName() + "\n" + 
+               super.toString();
+    }
+
+    @Override
+    public String pcType() {
+        return "Desktop";
     }
 }

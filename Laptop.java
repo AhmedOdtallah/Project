@@ -1,23 +1,53 @@
+import java.util.Random;
+
 public class Laptop extends PC {
     
-    private static Component screenType = new Component("IPS", 150);
-    private int batteryLife = 2;
+    private Component screen = new Component();
+    private int batteryLife;
 
     public Laptop(){
         super();
+        randomizeComponents();
+        priceAccordingly();
+    }
+
+    public void setPanel(Component panel) {
+        screen = panel;
+    }
+
+    public void setBatteryLife(int newLife) {
+        batteryLife = newLife;
+    }
+
+    public Component getScreen(){
+        return screen;
+    }
+
+    public int getBatteryLife(){
+        return batteryLife;
+    }
+
+    @Override
+    public void randomizeComponents(){
+        super.randomizeComponents();
+        Random randomNumber = new Random();
+        //Get Random Panel type
+        int number = randomNumber.nextInt(3);
+        String component = ComponentsList.panelKeys.get(number);
+        screen = ComponentsList.panels.get(component);
+        //Get Random battery life
+        batteryLife = randomNumber.nextInt(2,9);
     }
 
     @Override
     public String toString(){
-        return "Screen type: " + screenType.getName() + "\n" +
-               "Battery Life: " + batteryLife + " hours\n" +
+        return "Panel: " + screen.getName() + "\n" +
+               "Battery Life: " + batteryLife + "\n" + 
                super.toString();
     }
 
     @Override
-    public int priceAccordingly(){
-        super.priceAccordingly();
-        setPrice(getPrice() + screenType.getPrice());
-        return getPrice();
+    public String pcType() {
+        return "Laptop";
     }
 }
