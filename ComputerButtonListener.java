@@ -20,6 +20,7 @@ public class ComputerButtonListener implements ActionListener{
         }        
         if(response == 0){
             TestProject.admin.purchase((PC)pc);
+            System.out.println("how");
             System.out.println("Admin has purchased a " + pc.pcType() + " at the price of " + pc.getPrice());
         }
     }

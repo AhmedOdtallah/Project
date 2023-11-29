@@ -27,11 +27,17 @@ public class Customer {
         return name;
     }
 
-    public void purchase(PC item){
+    public void setBalance(int newBalance){
+        card.setBalance(newBalance);
+    }
+
+    public boolean purchase(PC item){
         try {
             card.charge(item);
+            return true;
         } catch (InsufficientFundsException e) {
-            e.printStackTrace();
+            System.out.println(getName() + " doesn't have enough money to make a purchase!");
+            return false;
         }
     }
 }
