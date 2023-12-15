@@ -1,0 +1,2 @@
+Insufficient funds to charge: 1940.
+Balance for Customer 10 is: 1066
