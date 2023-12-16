@@ -1,5 +1,4 @@
-
-
+package src;
 import java.util.Random;
 import javax.swing.ImageIcon;
 

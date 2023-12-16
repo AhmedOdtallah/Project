@@ -1,5 +1,4 @@
-
-
+package src;
 /**
  * The Component class represents a basic component with a name and a price. 
  * Also provides methods for retrieving and modifying the name and price of 

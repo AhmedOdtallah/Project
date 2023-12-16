@@ -1,5 +1,4 @@
-
-
+package src;
 /**
  * The Card class represents an object with customer information
  * that a customer will need to begin and complete purchases. Provides methods for retrieving

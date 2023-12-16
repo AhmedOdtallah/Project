@@ -1,4 +1,4 @@
-
+package src;
 /**
  * Admin IS-A customer with a bottomless card. This is the default login state 
  * for anyone starting the CFG Shop program. This class creates the Admin as a 
