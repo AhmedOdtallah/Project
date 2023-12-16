@@ -26,8 +26,8 @@ public class Component {
      * Parameterized constructor for Component class.
      * Initializes the component with the specified name and price.
      *
-     * @param newName The name of the component.
-     * @param newPrice The price of the component.
+     * @param newName of the component.
+     * @param newPrice of the component.
      */
     public Component(String newName, int newPrice){
         name = newName;
@@ -55,7 +55,7 @@ public class Component {
     /**
      * Sets the name of the component.
      *
-     * @param newName The new name of the component.
+     * @param newName of the component.
      */
     public void setName(String newName) {
         name = newName;
@@ -64,7 +64,7 @@ public class Component {
     /**
      * Sets the price of the component.
      *
-     * @param newPrice The new price of the component.
+     * @param newPrice of the component.
      */
     public void setPrice(int newPrice) {
         price = newPrice;
@@ -73,7 +73,7 @@ public class Component {
     /**
      * Copies the values from another Component object to this object.
      *
-     * @param component The Component object to copy values from.
+     * @param component object to copy values from.
      */
     public void copy(Component component){
         name = component.getName();

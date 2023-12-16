@@ -30,7 +30,7 @@ public class Laptop extends PC {
     /**
      * Sets the screen component for the laptop.
      * 
-     * @param panel The new screen component for the laptop.
+     * @param panel screen component for the laptop.
      */
     public void setPanel(Component panel) {
         screen = panel;

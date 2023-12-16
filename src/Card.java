@@ -77,10 +77,7 @@ public class Card {
 
     /**
      * Charges a customer for the PC object they are attempting to buy.
-     * Throws an InsufficientFundsException when customer has no money
-     * to complete the purchase.
-     * @param item
-     * @throws InsufficientFundsException
+     * @param amount
      */
     public void charge(int amount){
         balance -= amount;

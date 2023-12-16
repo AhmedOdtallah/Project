@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Store and manage a collection of motherboards, CPUs, GPUs, RAM configurations, PSUs, 
+ * Stores a collection of motherboards, CPUs, GPUs, RAM configurations, PSUs, 
  * storage options, and screen panels. Provide easy access to each category through HashMaps 
- * and key lists, where the key lists are randomly selected and the corresponding HashMap key 
- * is selected and imported to a component.
+ * and key lists, where the key lists are selected and the corresponding HashMap key 
+ * receives the input and gets imported to a component object.
  * 
  * @author Ahmed-Hassan Odtallah
  * @version 1.0

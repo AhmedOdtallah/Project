@@ -16,6 +16,6 @@ public class InsufficientFundsException extends Exception{
      * @param charge to display the amount charged
      */
     public InsufficientFundsException(Customer brokie, int charge){
-        super("Insufficient funds to charge: " + charge + ".\nBalance for " + brokie.getName() + " is: " + brokie.getCard().getBalance());
+        super(brokie.getName() + " had insufficient funds to make a " + charge + " purchase.");
     }
 }
