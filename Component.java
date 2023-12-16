@@ -1,4 +1,4 @@
-package src;
+
 
 /**
  * The Component class represents a basic component with a name and a price. 

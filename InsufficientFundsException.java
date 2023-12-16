@@ -1,4 +1,4 @@
-package src;
+
 /**
  * InsufficientFundsException IS-AN Exception that is thrown only when a customer
  * doesn't have the requisite funds to complete a purchase on a PC object.
