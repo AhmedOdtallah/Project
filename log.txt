@@ -1,10 +1,10 @@
-Customer 9 had insufficient funds to make a 2550 purchase.
-Customer 1 had insufficient funds to make a 2550 purchase.
-Customer 7 bought pc 3 for 2550
-Customer 5 bought pc 1 for 2610
-Customer 6 had insufficient funds to make a 2425 purchase.
-Customer 10 had insufficient funds to make a 2550 purchase.
-Customer 3 had insufficient funds to make a 2425 purchase.
-Customer 2 bought pc 2 for 2120
-Customer 4 bought pc 1 for 2610
-Customer 8 bought pc 2 for 2120
+Customer 9 had insufficient funds to make a 2475 purchase.
+Customer 10 bought pc 4 for 1940
+Customer 1 had insufficient funds to make a 2290 purchase.
+Customer 4 bought pc 4 for 1940
+Customer 3 bought pc 4 for 1940
+Customer 5 bought pc 5 for 2290
+Customer 8 bought pc 1 for 2515
+Customer 7 had insufficient funds to make a 2515 purchase.
+Customer 2 had insufficient funds to make a 2570 purchase.
+Customer 6 had insufficient funds to make a 2290 purchase.
