@@ -1,9 +1,8 @@
 package src;
-
 import java.util.Random;
 
 /**
- * This class is responsible for the customer object and provides methods to 
+ * Customer HAS-A card and is responsible for the customer object. Provides methods to 
  * both access and modify its name, card, and card details. Also provides a 
  * purchase() method that works in tandem with the charge() method in Card.  
  * 
@@ -67,7 +66,7 @@ public class Customer {
     /**
      * Sets the balance of the customer's payment card.
      * 
-     * @param newBalance The new balance to set for the customer's payment card.
+     * @param newBalance to set for the customer's payment card.
      */
     public void setBalance(int newBalance){
         card.setBalance(newBalance);
@@ -76,7 +75,7 @@ public class Customer {
     /**
      * Attempts to make a purchase using the customer's payment card.
      * 
-     * @param item The PC item to purchase.
+     * @param item to purchase.
      * @return True if the purchase is successful, false if there are insufficient funds.
      */
     public boolean purchase(PC item) throws InsufficientFundsException{

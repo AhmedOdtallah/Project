@@ -1,5 +1,4 @@
 package src;
-
 import java.util.Random;
 
 /**
@@ -31,7 +30,7 @@ public class Desktop extends PC {
     /**
      * Sets the PSU (Power Supply Unit) component for the desktop.
      * 
-     * @param psu The new PSU component for the desktop.
+     * @param psu component for the desktop.
      */
     public void setPSU(Component psu) {
         PSU = psu;
@@ -40,7 +39,7 @@ public class Desktop extends PC {
     /**
      * Sets the motherboard component for the desktop.
      * 
-     * @param motherboard The new motherboard component for the desktop.
+     * @param motherboard component for the desktop.
      */
     public void setMotherboard(Component motherboard) {
         this.motherboard = motherboard;

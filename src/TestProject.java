@@ -1,8 +1,6 @@
 package src;
-
 import java.util.Random;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -46,12 +44,7 @@ public class TestProject extends Thread{
             customers.add(customer);
 
             view.addToJTextField(customer.getName() + " walked in!");
-            
-            // try {
-            //     Thread.sleep(waitTime.nextInt(1000,1001));
-            // } catch (InterruptedException e) {
-            //     e.printStackTrace();
-            // }
+        
         }
 
         // Simulate customers purchasing PCs
@@ -72,16 +65,18 @@ public class TestProject extends Thread{
                 PC selectedPC = view.getComputer(randomPC);
     
                 //Display the customer that purchased the PC in a JOptionPane message dialog
-                if(customer.purchase(view.getComputer(randomPC))){
-                    logger.append(customer.getName() + " bought pc " + 
-                    selectedPC.getFrameNumber() + " for " + selectedPC.getPrice() + "\n");
+                try {
+                    if(customer.purchase(view.getComputer(randomPC))){
+                        logger.append(customer.getName() + " bought pc " + 
+                        selectedPC.getFrameNumber() + " for " + selectedPC.getPrice() + "\n");
+                    }
+                }catch(InsufficientFundsException error) {
+                    logger.append(error.getMessage() + "\n");
                 }
                 customers.remove(grabRandomCustomer);
             }
         }catch(IOException error){
             System.out.println(error.getMessage());
-        } catch (InsufficientFundsException error) {
-            logger.append(error.getMessage() + "\n");
         }finally{
             logger.close();
         }

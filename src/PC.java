@@ -1,6 +1,6 @@
 package src;
-
 import java.util.Random;
+import javax.swing.ImageIcon;
 
 /**
  * The PC class represents an abstract computer, serving as a base for specific PC types (Desktop and Laptop). 
@@ -24,6 +24,7 @@ public abstract class PC {
     private static int staticFrameNumber;
     private int frameNumber;
     private Random randomNumber = new Random();
+    private ImageIcon pcIcon = null;
 
     /**
      * Constructor for the PC class.
@@ -96,6 +97,24 @@ public abstract class PC {
      */
     public void setPrice(int newPrice){
         totalPrice = newPrice;
+    }
+
+    /**
+     * Retrieves the total price of the PC.
+     * 
+     * @return The total price of the PC.
+     */
+    public ImageIcon getIcon() {
+        return pcIcon;
+    }
+
+    /**
+     * Sets the total price of the PC.
+     * 
+     * @param newIcon The new icon to set for the PC.
+     */
+    public void setIcon(ImageIcon newIcon){
+        pcIcon = newIcon;
     }
 
     /**

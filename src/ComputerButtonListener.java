@@ -1,5 +1,4 @@
 package src;
-
 import java.awt.event.*;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -21,7 +20,7 @@ public class ComputerButtonListener implements ActionListener {
     /**
      * Constructor for the ComputerButtonListener class.
      * 
-     * @param newPC The PC object associated with the button click event.
+     * @param newPC associated with the button click event.
      */
     public ComputerButtonListener(PC newPC){
         pc = newPC;
@@ -35,15 +34,15 @@ public class ComputerButtonListener implements ActionListener {
      * @AreaOfFutureDevelopment Implement a better system where the purchase is shown as a dialog and saved 
      * to a file using a PrintWriter.
      * 
-     * @param click ActionEvent.
+     * @param e take a guess.
      */
     public void actionPerformed(ActionEvent click) {
         
         //Context switch between a Desktop dialog or a Laptop dialog
         if(pc instanceof Desktop){
-            response = JOptionPane.showOptionDialog(null, ((Desktop)pc).toString(), "Would you like to buy this PC?", 0, 0, (new ImageIcon("PCIcons\\icon" + ((PC)pc).getFrameNumber() + ".jpg")), null, click);
+            response = JOptionPane.showOptionDialog(null, ((Desktop)pc).toString(), "Would you like to buy this PC?", 0, 0, pc.getIcon(), null, click);
         } else if(pc instanceof Laptop){
-            response = JOptionPane.showOptionDialog(null, ((Laptop)pc).toString(), "Would you like to buy this PC?", 0, 0, (new ImageIcon("PCIcons\\icon" + ((PC)pc).getFrameNumber() + ".jpg")), null, click);
+            response = JOptionPane.showOptionDialog(null, ((Laptop)pc).toString(), "Would you like to buy this PC?", 0, 0, pc.getIcon(), null, click);
         }        
 
         //Print to terminal if the purchase was completed successfully, otherwise, do nothing.
