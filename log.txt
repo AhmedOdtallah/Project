@@ -1,2 +1,2 @@
-Insufficient funds to charge: 1940.
-Balance for Customer 10 is: 1066
+Insufficient funds to charge: 2590.
+Balance for Customer 9 is: 1675

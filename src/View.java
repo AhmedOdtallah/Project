@@ -75,9 +75,11 @@ public class View{
         
         //Create all the computerButtons necessary for the catalog
         for(int index = 0; index < 8; index++){
+            //Create the JButto names and add ActionListeners to them
             computerButtons[index] = new JButton("PC " + (index+1));
             computersContainer.add(computerButtons[index]);
             computerButtons[index].addActionListener(new ComputerButtonListener(catalog.getPC(index)));
+            
             //Grab the corresponding image. TO-DO: Randomize PC images
             computerButtons[index].setIcon(new ImageIcon("PCIcons\\icon" + index + ".jpg"));
             computerButtons[index].setBackground(new Color(255,255,255));
@@ -111,9 +113,9 @@ public class View{
     }
     
     /**
-     * Appends a message to the simulation field.
+     * Appends message to the simulation field.
      * 
-     * @param message The message to be added to the simulation field.
+     * @param message The message be added to the simulation field.
      */
     public void addToJTextField(String message){
         simulationField.setText(simulationField.getText() + "\n" + message + "\n");

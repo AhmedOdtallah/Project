@@ -35,15 +35,17 @@ public class ComputerButtonListener implements ActionListener {
      * @AreaOfFutureDevelopment Implement a better system where the purchase is shown as a dialog and saved 
      * to a file using a PrintWriter.
      * 
-     * @param e ActionEvent.
+     * @param click ActionEvent.
      */
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent click) {
+        
         //Context switch between a Desktop dialog or a Laptop dialog
         if(pc instanceof Desktop){
-            response = JOptionPane.showOptionDialog(null, ((Desktop)pc).toString(), "Would you like to buy this PC?", 0, 0, (new ImageIcon("PCIcons\\icon" + ((PC)pc).getFrameNumber() + ".jpg")), null, e);
+            response = JOptionPane.showOptionDialog(null, ((Desktop)pc).toString(), "Would you like to buy this PC?", 0, 0, (new ImageIcon("PCIcons\\icon" + ((PC)pc).getFrameNumber() + ".jpg")), null, click);
         } else if(pc instanceof Laptop){
-            response = JOptionPane.showOptionDialog(null, ((Laptop)pc).toString(), "Would you like to buy this PC?", 0, 0, (new ImageIcon("PCIcons\\icon" + ((PC)pc).getFrameNumber() + ".jpg")), null, e);
+            response = JOptionPane.showOptionDialog(null, ((Laptop)pc).toString(), "Would you like to buy this PC?", 0, 0, (new ImageIcon("PCIcons\\icon" + ((PC)pc).getFrameNumber() + ".jpg")), null, click);
         }        
+
         //Print to terminal if the purchase was completed successfully, otherwise, do nothing.
         if(response == 0){
             try{
@@ -51,7 +53,7 @@ public class ComputerButtonListener implements ActionListener {
             }catch(InsufficientFundsException error){
                 System.out.println("How did you manage to drain the admin account dawg restart the program.");
             }
-            System.out.println("Admin has purchased a " + pc.pcType() + " at the price of " + pc.getPrice());
+            
         }
     }
 }
